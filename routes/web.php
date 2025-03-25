@@ -1,6 +1,6 @@
 <?php
 
-use GuzzleHttp\Client;
+use App\Models\Cliente;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/cliente/create', Client::class);
+
