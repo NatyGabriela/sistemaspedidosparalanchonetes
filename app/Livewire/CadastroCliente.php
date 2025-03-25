@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Cliente;
-use Illuminate\Console\View\Components\Component ;
 use Livewire\Component;
 
 class CadastroCliente extends Component
@@ -21,7 +20,6 @@ class CadastroCliente extends Component
     public function create()
     {
         
-
         Cliente::create([
             'nome' => $this->nome,
             'cpf' => $this->cpf,
@@ -31,11 +29,8 @@ class CadastroCliente extends Component
             'senha' => Hash::make($this->senha),
         ]);
 
-        session()->flash('message', 'Cliente cadastrado com sucesso!');
-        return redirect()->route('clientes.index');
+       session()->flash('message', 'Cliente cadastrado com sucesso!');
     }
-
-
 
 
     public function render()
@@ -43,3 +38,5 @@ class CadastroCliente extends Component
         return view('livewire.cadastro-cliente');
     }
 }
+
+
